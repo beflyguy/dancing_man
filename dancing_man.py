@@ -19,6 +19,16 @@ colors = {'red': (255,0,0),
           'pink': (255,127,127),
           'purple': (127,0,255),}
 
+user_color_1 = str(input("What colors represent this song? (First Color)"))
+user_color_2 = str(input("What colors represent this song? (Second Color)"))
+user_color_3 = str(input("What colors represent this song? (Third Color)"))
+
+def input_colors(user_color_1,user_color_2,user_color_3):
+    while (user_color_1 or user_color_2 or user_color_3) not in colors:
+        user_color_1 = str(input("What colors represent this song? (First Color)"))
+        user_color_2 = str(input("What colors represent this song? (Second Color)"))
+        user_color_3 = str(input("What colors represent this song? (Third Color)"))
+
 def distance(left, right):
     return sum( (l - r) ** 2 for l, r in zip(left, right)) ** 0.5
 
@@ -85,8 +95,8 @@ def gif_time():
         images.append(imageio.imread(src + '/' + file))
     imageio.mimsave(root + 'dancing_man.gif')
 
-
-# change_all('purple','green','red')
+input_colors(user_color_1,user_color_2,user_color_3)
+# change_all(user_color_1,user_color_2,user_color_3)
 print(random_int)
 gif_time()
 # reset_all('purple','green','red')
